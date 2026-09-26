@@ -1,36 +1,9 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rodies Admin</title><link rel="stylesheet" href="style.css"></head>
-<body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rodies Admin</title><link rel="stylesheet" href="style.css"></head><body>
 <header><a class="brand" href="index.html">RODIES ADMIN</a><nav><a href="index.html">Customer Shop</a></nav></header>
-<main class="admin-wrap">
-<section id="adminLogin" class="panel login">
-<h1>Admin Login</h1><p>Private store management area.</p>
-<input id="adminPassword" type="password" placeholder="Admin password" onkeydown="if(event.key==='Enter')loginAdmin()">
-<button class="btn" onclick="loginAdmin()">Login</button><p id="loginMsg"></p>
-</section>
-
-<section id="dashboard" hidden>
-<div class="admin-head"><div><p class="eyebrow">DASHBOARD</p><h1>Manage Rodies</h1></div><button class="btn secondary" onclick="logoutAdmin()">Log out</button></div>
-
-<div class="panel">
-<h2>Add shoe</h2>
-<div class="formgrid">
-<input id="pName" placeholder="Shoe name">
-<input id="pPrice" type="number" placeholder="Price ₹">
-<input id="pSizes" placeholder="Sizes (comma separated)">
-</div>
-
-<h3 class="upload-title">Colour photos <span class="muted">(maximum 6)</span></h3>
-<p class="muted">For each photo you upload, enter its colour. Leave unused rows empty.</p>
-<div id="photoRows" class="photo-rows"></div>
-<button class="btn" type="button" onclick="addPhotoRow()">+ Add another colour</button>
-<div id="photoLimitMsg" class="muted">0 / 6 photos selected</div>
-
-<button class="btn save-product" onclick="addProduct()">Add product</button>
-</div>
-
-<h2>Products</h2><div id="adminProducts" class="grid"></div>
-</section>
-</main>
+<main class="admin-wrap"><section id="adminLogin" class="panel login"><h1>Admin Login</h1><p>Private store management area.</p><input id="adminPassword" type="password" placeholder="Admin password" onkeydown="if(event.key==='Enter')loginAdmin()"><button class="btn" onclick="loginAdmin()">Login</button><p id="loginMsg"></p></section>
+<section id="dashboard" hidden><div class="admin-head"><div><p class="eyebrow">DASHBOARD</p><h1>Manage Rodies</h1></div><button class="btn secondary" onclick="logoutAdmin()">Log out</button></div>
+<div class="panel"><h2>Add shoe</h2><div class="formgrid"><input id="pName" placeholder="Shoe name"><input id="pPrice" type="number" placeholder="Price ₹"><input id="pSizes" placeholder="Sizes (comma separated)"></div>
+<h3 class="upload-title">Colours <span class="muted">(maximum 10 colours)</span></h3><p class="muted">Add up to 10 colours. For each colour, you can upload up to 6 photos.</p>
+<div id="colourGroups" class="colour-groups"></div><button class="btn" type="button" onclick="addColourGroup()">+ Add colour</button><div id="colourLimitMsg" class="muted">0 / 10 colours added</div><button class="btn save-product" onclick="addProduct()">Add product</button></div>
+<h2>Products</h2><div id="adminProducts" class="grid"></div></section></main>
 <script src="app.js"></script><script>initAdmin()</script></body></html>
