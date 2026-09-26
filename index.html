@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rodies — Shoes</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a class="brand" href="index.html">RODIES</a><nav><a href="#shop">Shop</a><a href="#cart">Cart <span id="cartCount">0</span></a></nav></header>
+
+<section class="hero"><div><p class="eyebrow">LOCAL SHOE STORE</p><h1>Find your next pair.</h1><p>Quality styles. Local service. Simple shopping.</p><a class="btn" href="#shop">Shop shoes</a></div></section>
+
+<main id="shop">
+<section class="controls">
+<input id="search" placeholder="Search shoes..." oninput="render()">
+<select id="sort" onchange="render()"><option value="">Sort by</option><option value="asc">Price: Low to High</option><option value="desc">Price: High to Low</option></select>
+<select id="budget" onchange="render()"><option value="">All prices</option><option value="1000">Under ₹1,000</option><option value="2000">Under ₹2,000</option><option value="3000">Under ₹3,000</option></select>
+</section>
+<div id="products" class="grid"></div>
+</main>
+
+<section id="cart" class="cart-section"><h2>Your cart</h2><div id="cartItems"></div><div id="cartTotal"></div><button class="btn" onclick="checkout()">Order on WhatsApp</button></section>
+<footer>© 2026 Rodies Shoes</footer>
+
+<!-- Hidden admin access -->
+<button class="admin-dots" aria-label="Admin access" onclick="openAdminAccess()">☰</button>
+<div id="adminAccess" class="admin-access" hidden>
+  <div class="admin-access-box">
+    <button class="access-close" onclick="closeAdminAccess()" aria-label="Close">×</button>
+    <h3>Store Access</h3>
+    <input id="quickAdminPassword" type="password" placeholder="Password" onkeydown="if(event.key==='Enter')quickAdminLogin()">
+    <button class="btn" onclick="quickAdminLogin()">Continue</button>
+    <p id="quickLoginMsg" class="muted"></p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body></html>
